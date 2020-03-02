@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cee02a64-32f5-4aa0-bbe2-0969f143f2cb" name="/" url="https://phplab.by/30/">
+        <fileTransfer host="vh120.hoster.by" port="21">
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
