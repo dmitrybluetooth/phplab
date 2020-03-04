@@ -24,6 +24,7 @@ include ROOT.'/views/layouts/decree/header.php';
     $var /= 3;
     $var = $var++ + 7;
     $var = $var-- - 4;
+
     echo $var;
 	?><br><br>
     <h2>Работа с переменными:</h2>

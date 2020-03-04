@@ -9,7 +9,7 @@
     <meta name="keywords" content="Ключевые слова" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-    <link rel='stylesheet' id='decree-style-css'  href='views/layouts/decree/style.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='decree-style-css'  href='/30/views/layouts/decree/style.min.css' type='text/css' media='all' />
 
     <!--[if lt IE 9]>
     <script type='text/javascript' src='/views/layouts/decree/js/html5.min.js'></script>
@@ -41,7 +41,9 @@
                     <h3 class="screen-reader-text">Главное меню</h3>
                     <ul id="menu-top" class="menu decree-nav-menu">
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/">Главная</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/first.php">Домашнее задание 1</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/first">Домашнее задание 1</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/two">Домашнее задание 2</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/news">Новости</a></li>
                     </ul>
                 </nav><!-- .nav-primary -->
             </div><!-- #site-header-menu -->

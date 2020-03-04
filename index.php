@@ -19,6 +19,7 @@ define('HOST', "https://".$_SERVER['HTTP_HOST']."/".ID_ACCOUNT);
 
 
 require_once(ROOT.'/components/Router.php');
+require_once(ROOT.'/functions.php');
 
 //Вызор Router
 $router = new Router();

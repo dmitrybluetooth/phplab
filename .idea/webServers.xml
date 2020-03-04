@@ -2,8 +2,11 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="cee02a64-32f5-4aa0-bbe2-0969f143f2cb" name="/" url="https://phplab.by/30/">
+      <webServer id="99a8032e-e06b-46d1-be9e-0fcd229021ed" name="site" url="https://phplab.by/30/">
         <fileTransfer host="vh120.hoster.by" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
