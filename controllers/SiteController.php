@@ -1,4 +1,7 @@
 <?php
+require_once (ROOT . '/models/news.php');
+use models\News;
+
 class SiteController
 {
     public function actionIndex()
@@ -19,43 +22,25 @@ class SiteController
         return true;
     }
 
-    public function actionShowNews($id)
+    public function actionThree()
     {
-        $csv = file_get_contents(ROOT . '/upload/news.csv');
-        $csvRows = explode("\n", $csv);
-        $res = [];
-//        echo '<pre>';
-//        print_r($csvRows);
+        require_once(ROOT . '/views/site/three.php');
+        return true;
+    }
 
-        $keys = explode(";", array_shift($csvRows));
-        array_pop($keys);
-//        $idKey = array_search('ID',$keys);
-//        print_r($idKey);
-//        print_r($keys);
-//        print_r($csvRows);
-
-        foreach ($csvRows as $csvRow){
-            $row = explode(";", $csvRow);
-//            print_r($row);
-            $res[] = array_combine($keys, $row);
-//            foreach ($row as $key=>$value){
-//                $res[$row[0]][$keys[$key]] = $value;
-//                $res[$idKey][$keys[$key]] = $value;
-//            };
-        }
-//        print_r($res);
-
-        if(!empty($id)){
-            $news = $res[--$id];
-//            print_r($news);
+    public function actionShowNews($id = 0)
+    {
+        if(intval($id) != 0){
+            $_detailedNews = new News();
+            $detailedNews = $_detailedNews->detailedNews($id);
             require_once(ROOT . '/views/news/detailedNews.php');
-            return true;
-//            echo '</pre>';
         }
         else {
+            $_showNews = new News();
+            $showNews = $_showNews->showNews();
             require_once(ROOT . '/views/news/showNews.php');
-            return true;
         }
+        return true;
     }
 
 

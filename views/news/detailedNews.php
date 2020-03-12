@@ -1,25 +1,24 @@
 <?
 /** ############################################## */
 /** БЛОК ПЕРЕМЕННЫХ УНИКАЛЬНЫЙ ДЛЯ КАЖДОЙ СТРАНИЦЫ */
-/** @var array $news */
-$title = "{$news['TITLE']}";
-$description = "{$news['TITLE']}";
+/** @var array $detailedNews */
+$title = "{$detailedNews['TITLE']}";
+$description = "{$detailedNews['TITLE']}";
 /** ############################################## */
-
 include ROOT . '/views/layouts/decree/header.php';
 ?>
-<article id="post-<?= $news['ID'] ?>" class="hentry hentry-wide">
+<article id="post-<?= $detailedNews['ID'] ?>" class="hentry hentry-wide">
     <div class="entry-container">
         <header class="entry-header">
-            <h1 class="entry-title"><?= $news['TITLE'] ?></h1>
+            <h1 class="entry-title"><?= $detailedNews['TITLE'] ?></h1>
             <p class="entry-meta">
                 <span class="posted-on">
-                    <time class="entry-date published"><?= $news['DATE'] ?></time>
+                    <time class="entry-date published"><?= date('Y-m-d', strtotime($detailedNews['DATE'])) ?></time>
                 </span>
             </p>
         </header>
         <div class="entry-content">
-            <p><?= $news['DETAIL_TEXT'] ?></p>
+            <p><?= str_replace(['#SITE_NAME#', '#NAME#', '#PARAM#'], ['PHPLAB', 'DMITRY', 'Доп. текст'], $detailedNews['DETAIL_TEXT']) ?></p>
         </div>
     </div>
 </article>

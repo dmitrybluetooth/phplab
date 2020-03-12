@@ -1,7 +1,7 @@
 <?
 /** ############################################## */
 /** БЛОК ПЕРЕМЕННЫХ УНИКАЛЬНЫЙ ДЛЯ КАЖДОЙ СТРАНИЦЫ */
-/** @var array $res */
+/** @var array $showNews */
 $title = "Список новостей";
 $description = "Список новостей";
 /** ############################################## */
@@ -13,8 +13,8 @@ include ROOT . '/views/layouts/decree/header.php';
         <h2 class="section-title entry-title"><? echo "{$title}";?></h2>
     </div>
 </div>
-<? if(!empty($res)){ ?>
-    <? foreach ($res as $news){ ?>
+<? if(!empty($showNews)){ ?>
+    <? foreach ($showNews as $news){ ?>
     <article id="post-<?= $news['ID'] ?>" class="hentry">
         <div class="archive-post-wrap">
             <figure class="featured-image">
@@ -26,12 +26,12 @@ include ROOT . '/views/layouts/decree/header.php';
                     <h2 class="entry-title"><a href="/30/news/<?= $news['ID'] ?>/"><?= $news['TITLE'] ?></a></h2>
                     <p class="entry-meta">
                             <span class="posted-on">
-                                <time class="entry-date published"><?= $news['DATE'] ?></time>
+                                <time class="entry-date published"><?= date('Y-m-d', strtotime($news['DATE'])) ?></time>
                             </span>
                     </p>
                 </header>
                 <div class="entry-summary">
-                    <p><?= $news['PREVIEW_TEXT'] ?></p>
+                    <p><?= substr($news['PREVIEW_TEXT'], 0, 50) ?></p>
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ return array
     'index.php' => 'site/index/', // actionIndex в SiteController
     'first' => 'site/first/', // actionFirst в SiteController
     'two' => 'site/two/', // actionTwo в SiteController
+    'three' => 'site/three/', // actionThree в SiteController
 
     //новости
     'news/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)' => 'site/404/',
