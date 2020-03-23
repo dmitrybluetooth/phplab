@@ -1,5 +1,6 @@
 <?php
-require_once (ROOT . '/models/news.php');
+require_once(ROOT . '/models/News.php');
+require_once(ROOT . '/models/Worker.php');
 use models\News;
 
 class SiteController
@@ -25,6 +26,12 @@ class SiteController
     public function actionThree()
     {
         require_once(ROOT . '/views/site/three.php');
+        return true;
+    }
+
+    public function actionFour()
+    {
+        require_once(ROOT . '/views/site/four.php');
         return true;
     }
 

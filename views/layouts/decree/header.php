@@ -44,6 +44,7 @@
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/first">Домашнее задание 1</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/two">Домашнее задание 2</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/three">Домашнее задание 3</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/four">Домашнее задание 4</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/news">Новости</a></li>
                     </ul>
                 </nav><!-- .nav-primary -->
