@@ -43,5 +43,10 @@
     /* ]]> */
 </script>
 <script type='text/javascript' src='views/layouts/decree/js/custom-scripts.min.js'></script>
+<script>
+    $("input[type=radio]").on("change", function() {
+        $("input[type=submit]").prop("disabled", false);
+    });
+</script>
 </body>
 </html>

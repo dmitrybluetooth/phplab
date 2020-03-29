@@ -1,6 +1,7 @@
 <?php
 require_once(ROOT . '/models/News.php');
 require_once(ROOT . '/models/Worker.php');
+require_once(ROOT . '/models/User.php');
 use models\News;
 
 class SiteController
@@ -32,6 +33,36 @@ class SiteController
     public function actionFour()
     {
         require_once(ROOT . '/views/site/four.php');
+        return true;
+    }
+
+    public function actionFive()
+    {
+        require_once(ROOT . '/views/site/five.php');
+        return true;
+    }
+
+    public function actionTestFirst()
+    {
+        require_once(ROOT . '/views/test/testFirst.php');
+        return true;
+    }
+
+    public function actionTestTwo()
+    {
+        require_once(ROOT . '/views/test/testTwo.php');
+        return true;
+    }
+
+    public function actionTestThree()
+    {
+        require_once(ROOT . '/views/test/testThree.php');
+        return true;
+    }
+
+    public function actionTestFour()
+    {
+        require_once(ROOT . '/views/test/testFour.php');
         return true;
     }
 
