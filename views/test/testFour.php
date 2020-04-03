@@ -21,8 +21,8 @@ include ROOT.'/views/layouts/decree/header.php';
         array_push($_SESSION['test'], $_POST['answer']);
     for ($i = 0, $j = 1; $i < count($array); $i++, $j++)
         echo ($array[$i] == $_SESSION['test'][$i]) ? $j . '. Верно' . '<br />' : $j . '. Не верно' . '<br />';
+    $_SESSION['test'] = null;
 //    session_destroy();
-    unset($_SESSION);
     ?>
     <br />
     <form action="<?=HOST?>/testFirst" method="POST">

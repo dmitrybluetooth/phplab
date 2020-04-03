@@ -47,6 +47,13 @@
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/four">Домашнее задание 4</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/five">Домашнее задание 5</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/news">Новости</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/currency">Курсы валют</a></li>
+                        <?php if (!empty($_SESSION['auth'])): ?>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/logout">Выйти</a></li>
+                        <?php else: ?>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/register">Регистрация</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/login">Авторизация</a></li>
+                        <?php endif; ?>
                     </ul>
                 </nav><!-- .nav-primary -->
             </div><!-- #site-header-menu -->

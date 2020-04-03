@@ -17,7 +17,7 @@ include ROOT.'/views/layouts/decree/header.php';
 <div id="home_post">
 
     <?php
-    session_start();
+//    session_start(); есть уже в /index.php
     $_SESSION['test'] = [];
     ?>
 

@@ -4,7 +4,7 @@
 namespace models;
 
 
-class User
+class User implements iUser
 {
     private $name;
     private $age;
@@ -36,4 +36,15 @@ class User
     {
         if ($user1 === $user2) return true;
     }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
+
 }

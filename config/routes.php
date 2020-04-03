@@ -10,6 +10,10 @@ return array
     'three' => 'site/three/', // actionThree в SiteController
     'four' => 'site/four/', // actionFour в SiteController
     'five' => 'site/five/', // actionFive в SiteController
+    'register' => 'site/register/',
+    'login' => 'site/login/',
+    'logout' => 'site/logout/',
+    'currency' => 'site/currency/',
 
     //новости
     'news/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)' => 'site/404/',
