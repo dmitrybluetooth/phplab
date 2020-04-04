@@ -20,7 +20,7 @@ include ROOT.'/views/layouts/decree/header.php';
     <p style="color: red"><?php echo $str = is_null($str) ? $str : 'Введены неверные данные' ?></p>
     <form action="<?=HOST?>/login" method="POST">
         <input hidden name="redirect" value="<?= $redirect?>">
-        <p>Введите логин:<br>
+        <p>Введите логин (email):<br>
         <input name="login" type="email">
         <p>Введите пароль:<br>
         <input name="password" type="password"><br><br>

@@ -3,7 +3,9 @@ require_once(ROOT . '/models/News.php');
 require_once(ROOT . '/models/Worker.php');
 require_once(ROOT . '/models/iUser.php');
 require_once(ROOT . '/models/User.php');
+require_once(ROOT . '/models/Identity.php');
 use models\News;
+use models\Identity;
 
 
 class SiteController
@@ -85,16 +87,12 @@ class SiteController
 
     public function actionRegister()
     {
-        if (!empty($_POST['login'] && $_POST['password'])) {
-            $login = strip_tags($_POST['login']);
-            $password = strip_tags($_POST['password']);
-            $hash = password_hash($password, PASSWORD_DEFAULT);
-            $csv = fopen(ROOT . '/upload/csv.csv', 'a');
-            $str = "$login;$hash\n";
-            fwrite($csv, $str);
-            fclose($csv);
+        if (!empty($_POST['login'] && $_POST['password']))
+        {
+            $model = new Identity($_POST['login'], $_POST['password']);
+            $model->Register();
             $_SESSION['auth'] = true;
-            $result = '';
+            $str = '';
             header("Refresh: 5; URL={$_POST['redirect']}");
         }
         else
@@ -105,30 +103,10 @@ class SiteController
 
     public function actionLogin()
     {
-        if (!empty($_POST['login'] && $_POST['password']))
+        if (!empty($_POST['login'] or $_POST['password']))
         {
-            $login = strip_tags($_POST['login']);
-            $password = strip_tags($_POST['password']);
-
-            $csvRows = explode("\n", file_get_contents(ROOT . '/upload/csv.csv'));
-
-            $keys = explode(";", array_shift($csvRows));
-
-            $auth = [];
-
-            foreach ($csvRows as $csvRow){
-                $row = explode(";", $csvRow);
-                $auth[] = array_combine($keys, $row);
-            }
-
-            foreach ($auth as $key=>$value)
-            {
-                if ($value['LOGIN'] == $login and password_verify($password, $value['PASSWORD']))
-                {
-                    $_SESSION['auth'] = true;
-                    header($_POST['redirect']);
-                }
-            }
+            $model = new Identity($_POST['login'], $_POST['password']);
+            $model->Login();
             $redirect = $_POST['redirect'];
             $str = '';
         }
