@@ -14,6 +14,7 @@ return array
     'login' => 'site/login/',
     'logout' => 'site/logout/',
     'currency' => 'site/currency/',
+    'final' => 'site/final/',
 
     //новости
     'news/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)' => 'site/404/',

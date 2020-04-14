@@ -48,6 +48,7 @@
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/five">Домашнее задание 5</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/news">Новости</a></li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/currency">Курсы валют</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/final">Финал</a></li>
                         <?php if (!empty($_SESSION['auth'])): ?>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page home_item_menu"><a href="<?=HOST?>/logout">Выйти</a></li>
                         <?php else: ?>

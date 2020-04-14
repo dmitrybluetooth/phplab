@@ -4,6 +4,12 @@ require_once(ROOT . '/models/Worker.php');
 require_once(ROOT . '/models/iUser.php');
 require_once(ROOT . '/models/User.php');
 require_once(ROOT . '/models/Identity.php');
+require_once(ROOT . '/models/Car.php');
+require_once(ROOT . '/models/Person.php');
+require_once(ROOT . '/models/Policeman.php');
+require_once(ROOT . '/models/Learner.php');
+require_once(ROOT . '/models/PoliceDriver.php');
+require_once(ROOT . '/models/City.php');
 use models\News;
 use models\Identity;
 
@@ -127,7 +133,18 @@ class SiteController
     {
         $date = !isset($_POST['calendar']) ? date('m/d/Y') : date('m/d/Y', strtotime($_POST['calendar']));
         $xml = simplexml_load_file('http://www.nbrb.by/services/xmlexrates.aspx?ondate=' . $date);
+        // попробовал и API
+//        $json = json_decode(file_get_contents('https://www.nbrb.by/api/exrates/rates?ondate=' . date('Y-m-d',strtotime($date)) . '&periodicity=0'));
+//        debug($json);
+//        foreach ($json as $currency)
+//            echo "$currency->Cur_Name; $currency->Cur_Scale $currency->Cur_Abbreviation; $currency->Cur_OfficialRate<br />";
         require_once(ROOT . '/views/site/currency.php');
+        return true;
+    }
+
+    public function actionFinal()
+    {
+        require_once(ROOT . '/views/site/final.php');
         return true;
     }
 
